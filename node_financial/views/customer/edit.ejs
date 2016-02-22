@@ -1,0 +1,38 @@
+<form action="/customer/update/<%= customer.id %>" method="POST" >
+  <h2>Create a Customer</h2>
+  <table>
+  	<tr>
+	  	<td align='right'>
+	  		Customer Name
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.name %>"type="text" name="name" ><br />
+		</td>
+	</tr>
+	<tr>
+		<td align='right'>
+			Customer Street Adress
+		</td>
+		<td align='left'>
+			<input value="<%= customer.street_address %>" type="text" name="street_address" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Customer City
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.city %>"type="text" name="city" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Customer State
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.state %>"type="text" name="state" ><br />
+		</td>
+	</tr>
+  </table>
+  <input type="submit" value="Edit customer" />
+</form>

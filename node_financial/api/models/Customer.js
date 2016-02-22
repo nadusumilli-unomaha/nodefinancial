@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+	schema: true,
 
   attributes: {
   	name: {
@@ -18,9 +19,23 @@ module.exports = {
   		email: true
   	},
 
-  	state:{
+  	street_address:{
   		type:'string'
+  	},
+
+  	city:{
+  		type: 'string'
+  	},
+
+  	state:{
+  		type: 'string'
+  	},
+
+  	stocks:{
+  		collection: 'stock',
+      via: 'owner'
   	}
+  	
   }
 };
 
