@@ -7,24 +7,22 @@
 
 module.exports = {
 
-	'new':function(req,res,next){
-		Customer.findOne(req.param('owner'),function foundCustomer(err,customer){
-			if(err) return next(err);
-			if(!customer) return next();
+  'new': function(req, res, err) {
+    Customer.findOne(req.param('owner'), function foundCustomer (err, customer) {
+      if (err) return next(err);
+      if (!customer) return next();
+      res.view({
+        customer: customer
+      });
+    });
+  },
 
-			res.view({				
-				customer:customer
-			});
-		});
-	},
+  create: function(req, res, next) {
+    Stock.create(req.params.all(), function stockCreated(err, stock) {
+      if (err) return next(err);
 
-	create: function(req,res,next){
-		Stock.create(req.params.all(),function stockCreated(err,stock){
-			if(err) return next(err);
-
-			res.json(stock);
-		});
-	}
-
+      res.redirect('/customer/show/' + stock.owner);
+    });
+  }
+  
 };
-

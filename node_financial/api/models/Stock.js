@@ -8,25 +8,20 @@
 module.exports = {
 
   attributes: {
-  	price:{
-  		type:'float'
-  	},
+    symbol: {
+      type: 'string',
+      required: true
+    },
 
-  	symbol:{
-  		type:'string',
-  		required: true
-  	},
+    number_of_shares: {
+      type: 'float',
+      required: true
+    },
 
-  	number_of_shares:{
-  		type:'float',
-  		required: true
-  	},
-
-  	owner:{
-  		model:'customer',
-  		requried: true
-  	}
-  	
+    owner: {
+      model: 'customer',
+      required: true
+    }
   }
 };
 

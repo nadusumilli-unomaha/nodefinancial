@@ -17,15 +17,15 @@ module.exports = {
 		});
 	},
 
-	show: function(req,res,next){
-		Customer.findOne(req.param('id'),function foundCustomer(err,customer){
-			if(err) return next(err);
-			if(!customer) return next();
-			res.view({
-				customer: customer
-			});
-		});
-	},
+	show: function (req, res, next) {
+    	Customer.findOne(req.param('id')).populateAll().exec(function (err, customer) {
+      		if (err) return next(err);
+      		if (!customer) return next();
+      		res.view({
+        		customer: customer
+      		});
+    	});
+  	},
 
 	index: function(req,res,next){
 		Customer.find(function foundCustomer(err,customers){
@@ -62,6 +62,6 @@ module.exports = {
 		Customer.destroy(req.param('id')).exec(function(){
 			res.redirect('/customer/');	
 		});
-	}
+	} 
 };
 

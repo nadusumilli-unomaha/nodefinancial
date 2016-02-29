@@ -31,10 +31,10 @@ module.exports = {
   		type: 'string'
   	},
 
-  	stocks:{
-  		collection: 'stock',
+  	stocks: {
+      collection: 'stock',
       via: 'owner'
-  	}
+    }
   	
   }
 };
