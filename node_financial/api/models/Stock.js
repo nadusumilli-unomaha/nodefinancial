@@ -21,6 +21,18 @@ module.exports = {
     owner: {
       model: 'customer',
       required: true
+    },
+
+    purchase_price: {
+      type: 'string'
+    },
+
+    date_purchased:{
+      type: 'string'
+    },
+    
+    name:{
+      type: 'string'
     }
   }
 };

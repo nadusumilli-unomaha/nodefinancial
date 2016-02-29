@@ -1,0 +1,25 @@
+<form action="/stock/update/<%= stock.id %>" method="POST" >
+  <h2>Edit a Stock for Customer</h2>
+  <table>
+  	<tr>
+	  	<input type="hidden" name="owner" value="<%= stock.owner %>" />
+	</tr>
+	<tr>
+		<td align='right'>
+			Stock Symbol
+		</td>
+		<td align='left'>
+			<input value="<%= stock.symbol %>" type="text" name="symbol" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		number of shares
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.number_of_shares %>"type="text" name="number_of_shares" ><br />
+		</td>
+	</tr>
+  </table>
+  <input type="submit" value="Edit Stock" />
+</form>

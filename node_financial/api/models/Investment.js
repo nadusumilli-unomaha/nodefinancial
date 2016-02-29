@@ -1,43 +1,31 @@
 /**
- * Customer.js
+ * Investment.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-	schema: true,
 
   attributes: {
-  	name: {
-      type: 'string',
+     Investor:{
+      model: 'customer',
       required: true
-  },
-    email:{
-      type: 'string',
-      email: true
     },
-    street_address: {
+    category: {
       type: 'string'
     },
-    city:{
+    description: {
       type: 'string'
     },
-    state:{
-      type: 'string'
-     },
-    zip: {
+    acquired_value:{
       type: 'string'
     },
-    home_phone: {
+    acquired_date:{
       type: 'string'
     },
-    cell_phone:{
+    recent_date:{
       type: 'string'
-    },
-    stocks: {
-      collection: 'stock',
-      via: 'owner'
     }
   }
 };
