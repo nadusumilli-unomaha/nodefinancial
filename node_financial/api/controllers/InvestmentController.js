@@ -36,7 +36,7 @@ module.exports = {
   },
 
   show: function (req, res, next) {
-      Investment.findOne(req.param('id')).populate('investor').exec(function (err, investment) {
+      Investment.findOne(req.param('id')).populateAll().exec(function (err, investment) {
           if (err) return next(err);
           if (!investment) return next();
 
@@ -49,10 +49,10 @@ module.exports = {
   update: function(req,res,next){
     Investment.update(req.param('id'), req.params.all(), function investmentUpdated(err,customer){
       if(err){
-        return res.redirect('/stock/edit/'+req.param('id'));
+        return res.redirect('/investment/edit/'+req.param('id'));
       }
 
-      res.redirect('/stock/show/'+req.param('id'));
+      res.redirect('/investment/show/'+req.param('id'));
     });
   },
 
