@@ -35,10 +35,17 @@ module.exports = {
     cell_phone:{
       type: 'string'
     },
+    
     stocks: {
       collection: 'stock',
       via: 'owner'
+    },
+
+    investments: {
+      collection: 'investment',
+      via: 'investor'
     }
+
   }
 };
 

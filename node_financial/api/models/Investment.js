@@ -8,22 +8,28 @@
 module.exports = {
 
   attributes: {
-     Investor:{
+    
+    investor:{
       model: 'customer',
       required: true
     },
+
     category: {
       type: 'string'
     },
+
     description: {
       type: 'string'
     },
+
     acquired_value:{
       type: 'string'
     },
+
     acquired_date:{
       type: 'string'
     },
+
     recent_date:{
       type: 'string'
     }

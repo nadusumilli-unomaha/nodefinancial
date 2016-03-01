@@ -1,0 +1,11 @@
+<h1><%= investment.owner.name %></h1>
+<hr>
+<h3><%=investment.symbol%></h3>
+<h3>Name: <%= investment.category %></h3><br/>
+<h3>Acquired price: <%= investment.acquired_value %></h3><br/>
+<h3>Acquired date: <%= investment.acquired_date%></h3><br/>
+<h3>Description: <%=investment.description%></h3>
+<h3>Created: <%= investment.createdAt%></h3><br/>
+<h3>Modified: <%= investment.updatedAt%></h3><br/>
+<h3>Recent Date: <%= investment.recent_date%></h3><br/>
+<a href="/customer/show/<%=investment.owner.id%>">Show Customers</a>

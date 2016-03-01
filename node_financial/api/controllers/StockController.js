@@ -37,9 +37,10 @@ module.exports = {
   },
 
   show: function (req, res, next) {
-      Stock.findOne(req.param('id')).populateAll().exec(function (err, stock) {
+      Stock.findOne(req.param('id')).populate('owner').exec(function (err, stock) {
           if (err) return next(err);
           if (!stock) return next();
+
           res.view({
             stock:stock
           });
@@ -52,7 +53,7 @@ module.exports = {
         return res.redirect('/stock/edit/'+req.param('id'));
       }
 
-      res.redirect('/customer/');
+      res.redirect('/stock/show/'+req.param('id'));
     });
   },
 

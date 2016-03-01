@@ -1,0 +1,33 @@
+<form action="/investment/update/<%= investment.id %>" method="POST" >
+  <h2>Edit a Investment for Customer</h2>
+  <table>
+  	<tr>
+	  	<input type="hidden" name="investor" value="<%= investment.investor %>" />
+	</tr>
+	<tr>
+		<td align='right'>
+			Name
+		</td>
+		<td align='left'>
+			<input value="<%= investment.name %>" type="text" name="name" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Acquired Price
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.acquired_value %>"type="text" name="acquired_value" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Acquired Date
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.acquired_date %>"type="text" name="acquired_date" ><br />
+		</td>
+	</tr>
+  </table>
+  <input type="submit" value="Edit Stock" />
+</form>

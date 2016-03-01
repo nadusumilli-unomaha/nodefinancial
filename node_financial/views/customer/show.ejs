@@ -25,10 +25,37 @@
   <% }); %>
 </table>
 
-
 <form action="/stock/new" method="POST" >
   <input type="hidden" value="<%= customer.id %>" name="owner">
   <input type="submit" value="Add Stock" />
+</form>
+
+<hr>
+<h3>Investment</h3>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Acquired Date</th>
+    <th>Acquired Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% _.each(customer.investments, function(investment) { %>
+  <tr data-id="<%= investment.id %>" data-model="investment" >
+    <td><%= investment.category %></td>
+    <td><%= investment.acquired_value %></td>
+    <td><%=investment.acquired_date%></td>
+    <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
+    <td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
+    <td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
+  </tr>
+  <% }); %>
+</table>
+
+<form action="/investment/new" method="POST" >
+  <input type="hidden" value="<%= customer.id %>" name="investor">
+  <input type="submit" value="Add Investment" />
 </form>
 <br/>
 <a href="/customer">Show Customers</a>
