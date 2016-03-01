@@ -1,14 +1,16 @@
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/customer">Customer</a></li>
-</ul>
+<nav>
+  <a href="/">Home</a>
+  <a href="/customer">Customer</a>
+</nav>
 <form action="/investment/create" method="POST" >
   <h2>Create a new Investment for <%= customer.name %></h2>
 
   <input type="hidden" name="investor" value="<%= customer.id %>" />
 
-  <input type="text" placeholder="Symbol" name="category" ><br />
-  <input type="text" placeholder="Number of Shares" name="acquired_value"><br />
+  <input type="text" placeholder="Category" name="category" ><br />
+  <textarea type="text" placeholder="Description" name="description"></textarea><br />
+  <input type="text" placeholder="Acquired Value" name="acquired_value"><br />
   <input type="text" placeholder="Acquired date" name="acquired_date"><br />
+  <input type="text" placeholder="Recent date" name="recent_date"><br />
   <input type="submit" value="Add Investment" />
 </form>

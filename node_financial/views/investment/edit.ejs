@@ -1,7 +1,7 @@
-<ul>
-  <li><a href="/">Home</a></li>
-  <li><a href="/customer">Customer</a></li>
-</ul>
+<nav>
+  <a href="/">Home</a>
+  <a href="/customer">Customer</a>
+</nav>
 <form action="/investment/update/<%= investment.id %>" method="POST" >
   <h2>Edit a Investment for Customer</h2>
   <table>
@@ -10,10 +10,18 @@
 	</tr>
 	<tr>
 		<td align='right'>
-			Name
+			Category
 		</td>
 		<td align='left'>
 			<input value="<%= investment.category %>" type="text" name="category" ><br />	
+		</td>
+	</tr>
+	<tr>
+		<td align='right'>
+			Description
+		</td>
+		<td align='left'>
+			<input value="<%= investment.description %>" type="text" name="description" ><br />	
 		</td>
 	</tr>
 	<tr>
@@ -32,6 +40,15 @@
 		  <input value="<%= investment.acquired_date %>"type="text" name="acquired_date" ><br />
 		</td>
 	</tr>
+	<tr>
+		<td align='right'>
+			Recent Date
+		</td>
+		<td align='left'>
+			<input value="<%= investment.recent_date %>" type="text" name="recent_date" ><br />	
+		</td>
+	</tr>
   </table>
+  <br/>
   <input type="submit" value="Edit Investment" />
 </form>

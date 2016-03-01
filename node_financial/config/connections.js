@@ -55,7 +55,7 @@ module.exports.connections = {
     database:'sailsfinancial',
     host: process.env.OPENSHIFT_MYSQL_DB_HOST,
     port: process.env.OPENSHIFT_MYSQL_DB_PORT
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -65,14 +65,14 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-  someMongodbServer: {
-    adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
+  //someMongodbServer: {
+    //adapter: 'sails-mongo',
+    //host: 'localhost',
+    //port: 27017,
     // user: 'username',
     // password: 'password',
     // database: 'your_mongo_db_name_here'
-  },
+  //},
 
   /***************************************************************************
   *                                                                          *
@@ -83,13 +83,13 @@ module.exports.connections = {
   *                                                                          *
   *                                                                          *
   ***************************************************************************/
-  somePostgresqlServer: {
-    adapter: 'sails-postgresql',
-    host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
-    user: 'YOUR_POSTGRES_USER',
-    password: 'YOUR_POSTGRES_PASSWORD',
-    database: 'YOUR_POSTGRES_DB'
-  }
+  //somePostgresqlServer: {
+   // adapter: 'sails-postgresql',
+   // host: 'YOUR_POSTGRES_SERVER_HOSTNAME_OR_IP_ADDRESS',
+   // user: 'YOUR_POSTGRES_USER',
+   // password: 'YOUR_POSTGRES_PASSWORD',
+   // database: 'YOUR_POSTGRES_DB'
+ // }
 
 
   /***************************************************************************
