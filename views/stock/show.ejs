@@ -1,0 +1,16 @@
+<nav>
+  <a href="/">Home</a>
+  <a href="/customer/show/<%=stock.owner.id%>"><%=stock.owner.name%></a>
+  <a href="/customer">Customer</a>
+</nav>
+<h1><%= stock.owner.name %></h1>
+<hr>
+<h3>Symbol: <%=stock.symbol%></h3>
+<h3>Name: <%= stock.name %></h3><br/>
+<h3>Number Of Shares: <%= stock.number_of_shares %></h3><br/>
+<h3>Purchase Price: <%= stock.purchase_price%></h3><br/>
+<h3>Created: <%= stock.createdAt%></h3><br/>
+<h3>Modified: <%= stock.updatedAt%></h3><br/>
+<hr>
+<td><a href="/stock/edit/<%= stock.id %>">Edit</a></td>
+<td><a href="/stock/destroy/<%= stock.id %>">Delete</a></td>
