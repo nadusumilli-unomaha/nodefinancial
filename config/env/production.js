@@ -12,7 +12,7 @@
 
 module.exports = {
 
-  hookTimeout: 600000, //30
+  hookTimeout: 60, //30
   /***************************************************************************
    * Set the default database connection for models in the production        *
    * environment (see config/connections.js and config/models.js )           *
