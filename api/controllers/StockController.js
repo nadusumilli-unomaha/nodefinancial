@@ -20,58 +20,8 @@ module.exports = {
   create: function(req, res, next) {
     Stock.create(req.params.all(), function stockCreated(err, stock) {
       if (err) return next(err);
-<<<<<<< HEAD
-<<<<<<< b6498c528f494ad6e221f7cd084f1783c91483b8
-=======
->>>>>>> class/master
-      function process_response(webservice_response, stock, callback){
-            var webservice_data ="";
-            webservice_response.on('error', function(e){
-              //console.log(e.message);
-              callback("Error: "+e.message);
-            });
-
-            webservice_response.on('data', function(chunck){
-              webservice_data += chunck;
-            });
-
-            webservice_response.on('end', function(){
-              stock_data = JSON.parse(webservice_data);
-              stock.purchase_price = stock_data.LastPrice;
-              //console.log(stock.symbol + '= $'+stock.current_price);
-              callback();
-            });
-          };
-
-
-          function get_current_price(stock, callback){
-            console.log(stock.symbol);
-            options = {
-              host: 'dev.markitondemand.com',
-              port: 80,
-              path: '/MODApis/Api/v2/Quote/JSON?symbol=' + stock.symbol,
-              method: 'GET'
-            };
-
-            var webservice_request = http.request(options, function(response){
-              process_response(response, stock, callback)
-            });
-            webservice_request.end();
-
-            //console.log(stock.symbol +'='+stock.current_price);
-          };
-
-          async.each(customer.stocks, get_current_price, function(err){
-            if(err) console.log(err);
-            //console.log('done');
-      res.redirect('/customer/show/' + stock.owner);
-<<<<<<< HEAD
-=======
-
+      
         res.redirect('/stock/show/' + stock.id);
->>>>>>> all
-=======
->>>>>>> class/master
     });
   },
 
