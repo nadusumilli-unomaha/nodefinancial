@@ -20,7 +20,10 @@ module.exports = {
   create: function(req, res, next) {
     Stock.create(req.params.all(), function stockCreated(err, stock) {
       if (err) return next(err);
+<<<<<<< HEAD
 <<<<<<< b6498c528f494ad6e221f7cd084f1783c91483b8
+=======
+>>>>>>> class/master
       function process_response(webservice_response, stock, callback){
             var webservice_data ="";
             webservice_response.on('error', function(e){
@@ -62,10 +65,13 @@ module.exports = {
             if(err) console.log(err);
             //console.log('done');
       res.redirect('/customer/show/' + stock.owner);
+<<<<<<< HEAD
 =======
 
         res.redirect('/stock/show/' + stock.id);
 >>>>>>> all
+=======
+>>>>>>> class/master
     });
   },
 
