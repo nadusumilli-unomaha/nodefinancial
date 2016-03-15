@@ -45,15 +45,6 @@ module.exports = {
 
 
       		function get_current_price(stock, callback){
-<<<<<<< HEAD
-<<<<<<< b6498c528f494ad6e221f7cd084f1783c91483b8
-      			console.log(stock.symbol);
-=======
-      			//console.log(stock.symbol);
->>>>>>> all
-=======
-      			console.log(stock.symbol);
->>>>>>> class/master
       			options = {
       				host: 'dev.markitondemand.com',
       				port: 80,
