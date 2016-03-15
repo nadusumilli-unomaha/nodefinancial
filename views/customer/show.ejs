@@ -1,0 +1,65 @@
+<nav>
+    <a href="/">Home</a>
+    <a href="/customer">Customer</a>
+</nav>
+<h1><%= customer.name %></h1>
+<hr>
+<h3>Email: <%= customer.email %></h3>
+<h3>Address: <%= customer.street_address %>
+,<%= customer.city%>
+,<%= customer.state %>
+,<%= customer.zip %></h3>
+<h3>Home Phone: <%= customer.home_phone %></h3>
+<h3>Cell Phone: <%= customer.cell_phone %></h3><br/>
+<td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
+<td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
+<hr>
+<!--This is the Stock information-->
+<h3>Stocks</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Number of Shares</th>
+    <th>Current Price</th>
+    <th>Latest Price</th>
+    <th></th>
+  </tr>
+  <% _.each(customer.stocks, function(stock) { %>
+  <tr data-id="<%= stock.id %>" data-model="stock" >
+    <td><%= stock.name %></td>
+    <td><%= stock.number_of_shares %></td>
+    <td><%= stock.purchase_price%></td>
+    <td><%= stock.current_price%></td>
+    <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
+  </tr>
+  <% }); %>
+</table>
+<br/>
+<form action="/stock/new" method="POST" >
+  <input type="hidden" value="<%= customer.id %>" name="owner">
+  <input type="submit" value="Add Stock" />
+</form>
+<!--This is the investment information-->
+<hr>
+<h3>Investment</h3>
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Acquired Date</th>
+    <th>Acquired Date</th>
+    <th></th>
+  </tr>
+  <% _.each(customer.investments, function(investment) { %>
+  <tr data-id="<%= investment.id %>" data-model="investment" >
+    <td><%= investment.category %></td>
+    <td><%= investment.acquired_value %></td>
+    <td><%=investment.acquired_date%></td>
+    <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
+  </tr>
+  <% }); %>
+</table>
+<br/>
+<form action="/investment/new" method="POST" >
+  <input type="hidden" value="<%= customer.id %>" name="investor">
+  <input type="submit" value="Add Investment" />
+</form>

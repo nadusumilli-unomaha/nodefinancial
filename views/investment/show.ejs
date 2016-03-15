@@ -1,0 +1,17 @@
+<nav>
+  <a href="/">Home</a>
+  <a href="/customer/show/<%=investment.investor.id%>"><%=investment.investor.name%></a>
+  <a href="/customer">Customer</a>
+</nav>
+<h1><%= investment.investor.name %></h1>
+<hr>
+<h3>Name: <%= investment.category %></h3><br/>
+<h3>Acquired price: <%= investment.acquired_value %></h3><br/>
+<h3>Acquired date: <%= investment.acquired_date%></h3><br/>
+<h3>Description: <%=investment.description%></h3><br/>
+<h3>Recent Date: <%= investment.recent_date%></h3><br/>
+<h3>Created: <%= investment.createdAt%></h3><br/>
+<h3>Modified: <%= investment.updatedAt%></h3><br/>
+<hr>
+<td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
+<td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
