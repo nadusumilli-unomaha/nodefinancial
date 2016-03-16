@@ -1,87 +1,103 @@
-<div class="jumbotron">
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Brand</a>
-        </div>
-        <div class="collapse navbar-collapse" id="nav-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">About</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </div>
+<div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+    </ul>
+  </div>
 </nav>
-<h1><%= customer.name %></h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <h1><%= customer.name %></h1>
+        <hr>
+        <h3>Email: <%= customer.email %></h3>
+        <h3>Address: <%= customer.street_address %>
+        ,<%= customer.city%>
+        ,<%= customer.state %>
+        ,<%= customer.zip %></h3>
+        <h3>Home Phone: <%= customer.home_phone %></h3>
+        <h3>Cell Phone: <%= customer.cell_phone %></h3><br/>
+        <td><a class="btn btn-warning btn-lg" href="/customer/edit/<%= customer.id %>">Edit</a></td>
+        <td><a class="btn btn-danger btn-lg" href="/customer/destroy/<%= customer.id %>">Delete</a></td>
+    </div>
+    <div class="col-md-6">
+        <h1>Portfolio: </h1>
+        <hr>
+        <table class="show">
+        <tr>
+            <th>Stocks</th>
+            <th>Investment</th>
+        </tr>
+        <tr>
+            <td><%=customer.stocks.total_portfolio%></td>
+            <td><%=customer.investments.total_portfolio%></td>
+        </tr>
+        </table>
+    </div>
+  </div>
+</div>
 <hr>
-<h3>Email: <%= customer.email %></h3>
-<h3>Address: <%= customer.street_address %>
-,<%= customer.city%>
-,<%= customer.state %>
-,<%= customer.zip %></h3>
-<h3>Home Phone: <%= customer.home_phone %></h3>
-<h3>Cell Phone: <%= customer.cell_phone %></h3><br/>
-<td><a href="/customer/edit/<%= customer.id %>">Edit</a></td>
-<td><a href="/customer/destroy/<%= customer.id %>">Delete</a></td>
-<hr>
-<!--This is the Stock information-->
-<h3>Stocks</h3>
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Number of Shares</th>
-    <th>Current Price</th>
-    <th>Latest Price</th>
-    <th>Current Portfolio</th>
-    <th>Initial Portfolio</th>
-    <th></th>
-  </tr>
-  <% _.each(customer.stocks, function(stock) { %>
-  <tr data-id="<%= stock.id %>" data-model="stock" >
-    <td><%= stock.name %></td>
-    <td><%= stock.number_of_shares %></td>
-    <td>$ <%= stock.purchase_price%></td>
-    <td>$ <%= stock.current_price%></td>
-    <td>$ <%= stock.current_stock_portfolio%></td>
-    <td>$ <%= stock.initial_stock_portfolio%></td>
-    <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
-  </tr>
-  <% }); %>
-</table>
-<br/>
-<form action="/stock/new" method="POST" >
-  <input type="hidden" value="<%= customer.id %>" name="owner">
-  <input type="submit" value="Add Stock" />
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!--This is the Stock information-->
+      <h3>Stocks</h3>
+      <table class="show">
+        <tr>
+          <th >Name</th>
+          <th >Number of Shares</th>
+          <th >Latest Price</th>
+          <th>Total Value</th>
+          <th ></th>
+        </tr>
+        <% _.each(customer.stocks, function(stock) { %>
+        <tr data-id="<%= stock.id %>" data-model="stock" >
+          <td><%= stock.name %></td>
+          <td><%= stock.number_of_shares %></td>
+          <td><%= stock.current_price%></td>
+          <td><%= stock.current_stock_portfolio%></td>
+          <td><a class="btn btn-info btn-lg" href="/stock/show/<%= stock.id %>">Show</a></td>
+        </tr>
+        <% }); %>
+      </table>
+      <br/>
+      <form action="/stock/new" method="POST" >
+        <input type="hidden" value="<%= customer.id %>" name="owner">
+        <input type="submit" class="btn btn-primary btn-lg" value="New Stock" />
+      </form>
+    </div>
+  </div>
+</div>
 <!--This is the investment information-->
 <hr>
-<h3>Investment</h3>
-<table>
-  <tr>
-    <th>Category</th>
-    <th>Acquired Date</th>
-    <th>Acquired Date</th>
-    <th></th>
-  </tr>
-  <% _.each(customer.investments, function(investment) { %>
-  <tr data-id="<%= investment.id %>" data-model="investment" >
-    <td><%= investment.category %></td>
-    <td><%= investment.acquired_value %></td>
-    <td><%=investment.acquired_date%></td>
-    <td><a href="/investment/show/<%= investment.id %>">Show</a></td>
-  </tr>
-  <% }); %>
-</table>
-<br/>
-<form action="/investment/new" method="POST" >
-  <input type="hidden" value="<%= customer.id %>" name="investor">
-  <input type="submit" value="Add Investment" />
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Investment</h3>
+      <table class="show">
+        <tr>
+          <th>Category</th>
+          <th>Acquired Date</th>
+          <th>Value</th>
+          <th></th>
+        </tr>
+        <% _.each(customer.investments, function(investment) { %>
+        <tr data-id="<%= investment.id %>" data-model="investment" >
+          <td><%= investment.category %></td>
+          <td><%=investment.acquired_date%></td>
+          <td><%= investment.acquired_value %></td>
+          <td><a class="btn btn-info btn-lg" href="/investment/show/<%= investment.id %>">Show</a></td>
+        </tr>
+        <% }); %>
+      </table>
+      <br/>
+      <form action="/investment/new" method="POST" >
+        <input type="hidden" value="<%= customer.id %>" name="investor">
+        <input type="submit" class="btn btn-primary btn-lg" value="New Stock" />
+      </form>
+    </div>
+  </div>
 </div>

@@ -1,11 +1,18 @@
-<nav class="navbar">
-  <a href="/">Home</a>
-  <a href="/customer/show/<%=investment.investor.id%>"><%=investment.investor.name%></a>
-  <a href="/customer">Customer</a>
+<div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/customer/show/<%=investment.investor.id%>"><%=investment.investor.name%></a></li>
+    </ul>
+  </div>
 </nav>
+</div>
+<div>
 <h1><%= investment.investor.name %></h1>
 <hr>
-<h3>Name: <%= investment.category %></h3><br/>
+<h3>Category: <%= investment.category %></h3><br/>
 <h3>Acquired price: <%= investment.acquired_value %></h3><br/>
 <h3>Acquired date: <%= investment.acquired_date%></h3><br/>
 <h3>Description: <%=investment.description%></h3><br/>
@@ -13,5 +20,6 @@
 <h3>Created: <%= investment.createdAt%></h3><br/>
 <h3>Modified: <%= investment.updatedAt%></h3><br/>
 <hr>
-<td><a href="/investment/edit/<%= investment.id %>">Edit</a></td>
-<td><a href="/investment/destroy/<%= investment.id %>">Delete</a></td>
+<td><a class="btn btn-warning btn-lg" href="/investment/edit/<%= investment.id %>">Edit</a></td>
+<td><a class="btn btn-danger btn-lg" href="/investment/destroy/<%= investment.id %>">Delete</a></td>
+</div>

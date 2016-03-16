@@ -20,7 +20,7 @@ module.exports = {
   create: function(req, res, next) {
     Stock.create(req.params.all(), function stockCreated(err, stock) {
       if (err) return next(err);
-      
+
         res.redirect('/stock/show/' + stock.id);
     });
   },
@@ -39,8 +39,8 @@ module.exports = {
   show: function (req, res, next) {
       Stock.findOne(req.param('id')).populate('owner').exec(function (err, stock) {
           if (err) return next(err);
-          if (!stock) return next();
-
+          if (!stock) return next();         
+          
           res.view({
             stock:stock
           });
