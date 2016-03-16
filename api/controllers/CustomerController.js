@@ -38,6 +38,8 @@ module.exports = {
       			webservice_response.on('end', function(){
       				stock_data = JSON.parse(webservice_data);
       				stock.current_price = stock_data.LastPrice;
+      				stock.initial_stock_portfolio = stock.purchase_price * stock.number_of_shares;
+      				stock.current_stock_portfolio = stock.current_price * stock.number_of_shares;
       				//console.log(stock.symbol + '= $'+stock.current_price);
       				callback();
       			});

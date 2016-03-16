@@ -1,6 +1,23 @@
-<nav>
-    <a href="/">Home</a>
-    <a href="/customer">Customer</a>
+<div class="jumbotron">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
 </nav>
 <h1><%= customer.name %></h1>
 <hr>
@@ -22,14 +39,18 @@
     <th>Number of Shares</th>
     <th>Current Price</th>
     <th>Latest Price</th>
+    <th>Current Portfolio</th>
+    <th>Initial Portfolio</th>
     <th></th>
   </tr>
   <% _.each(customer.stocks, function(stock) { %>
   <tr data-id="<%= stock.id %>" data-model="stock" >
     <td><%= stock.name %></td>
     <td><%= stock.number_of_shares %></td>
-    <td><%= stock.purchase_price%></td>
-    <td><%= stock.current_price%></td>
+    <td>$ <%= stock.purchase_price%></td>
+    <td>$ <%= stock.current_price%></td>
+    <td>$ <%= stock.current_stock_portfolio%></td>
+    <td>$ <%= stock.initial_stock_portfolio%></td>
     <td><a href="/stock/show/<%= stock.id %>">Show</a></td>
   </tr>
   <% }); %>
@@ -63,3 +84,4 @@
   <input type="hidden" value="<%= customer.id %>" name="investor">
   <input type="submit" value="Add Investment" />
 </form>
+</div>
