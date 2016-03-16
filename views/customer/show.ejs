@@ -11,17 +11,36 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-        <h1><%= customer.name %></h1>
-        <hr>
-        <h3>Email: <%= customer.email %></h3>
-        <h3>Address: <%= customer.street_address %>
-        ,<%= customer.city%>
-        ,<%= customer.state %>
-        ,<%= customer.zip %></h3>
-        <h3>Home Phone: <%= customer.home_phone %></h3>
-        <h3>Cell Phone: <%= customer.cell_phone %></h3><br/>
-        <td><a class="btn btn-warning btn-lg" href="/customer/edit/<%= customer.id %>">Edit</a></td>
-        <td><a class="btn btn-danger btn-lg" href="/customer/destroy/<%= customer.id %>">Delete</a></td>
+    <h1><%= customer.name %></h1>
+    <div class="invfont">
+    <table class="table">
+      <tr>
+            <td><strong>Email: </strong></td>
+            <td><strong><%= customer.email %></strong></td>
+      </tr>
+      <tr>
+            <td><strong>Address: </strong></td>
+            <td><strong>
+            <%= customer.street_address %>
+            ,<%= customer.city%>
+            ,<%= customer.state %>
+            ,<%= customer.zip %>
+            </strong></td>
+      </tr>
+      <tr>
+            <td><strong>Home Phone: </strong></td>
+            <td><strong><%= customer.home_phone %></strong></td>
+      </tr>
+      <tr>
+          <td><strong>Cell Phone: </strong></td>
+          <td><strong><%= customer.cell_phone %></strong></td>
+      </tr>
+    </table>
+    </div>
+    <hr>
+    <br/>
+        <a class="btn btn-warning btn-lg" href="/customer/edit/<%= customer.id %>">Edit</a>
+        <a class="btn btn-danger btn-lg" href="/customer/destroy/<%= customer.id %>">Delete</a>
     </div>
     <div class="col-md-6">
         <h1>Portfolio: </h1>
@@ -96,7 +115,7 @@
       <br/>
       <form action="/investment/new" method="POST" >
         <input type="hidden" value="<%= customer.id %>" name="investor">
-        <input type="submit" class="btn btn-primary btn-lg" value="New Stock" />
+        <input type="submit" class="btn btn-primary btn-lg" value="New Investment" />
       </form>
     </div>
   </div>

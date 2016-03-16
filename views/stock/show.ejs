@@ -10,16 +10,48 @@
 </nav>
 </div>
 <div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
 <h1><%= stock.owner.name %></h1>
-<hr>
-<h3>Symbol: <%=stock.symbol%></h3>
-<h3>Name: <%= stock.name %></h3><br/>
-<h3>Number Of Shares: <%= stock.number_of_shares %></h3><br/>
-<h3>Purchase Price: <%= stock.purchase_price%></h3><br/>
-<h3>Latest Price: <%= stock.current_price%></h3><br/>
-<h3>Created: <%= stock.createdAt%></h3><br/>
-<h3>Modified: <%= stock.updatedAt%></h3><br/>
-<hr>
-<td><a class="btn btn-warning btn-lg" href="/stock/edit/<%= stock.id %>">Edit</a></td>
-<td><a class="btn btn-danger btn-lg" href="/stock/destroy/<%= stock.id %>">Delete</a></td>
+<div class="invfont">
+<table class="table">
+	<tr>
+		<td><strong>Symbol: </strong></td>
+		<td><strong><%=stock.symbol%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Name: </strong></td>
+		<td><strong><%= stock.name %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Number Of Shares: </strong></td>
+		<td><strong><%= stock.number_of_shares %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Purchase Price: </strong></td>
+		<td><strong><%= stock.purchase_price%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Latest Price: </strong></td>
+		<td><strong><%= stock.current_price%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Created: </strong></td>
+		<td><strong><%= stock.createdAt%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Modified: </strong></td>
+		<td><strong><%= stock.updatedAt%></strong></td>
+	</tr>
+</table>
+</div>
+<hr/>
+<br/>
+<br/>
+<a class="btn pull-left btn-warning btn-lg" href="/stock/edit/<%= stock.id %>">Edit</a>
+<a class="btn pull-right btn-danger btn-lg" href="/stock/destroy/<%= stock.id %>">Delete</a>
+</div>
 </div>	

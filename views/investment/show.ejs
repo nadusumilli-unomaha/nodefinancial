@@ -10,16 +10,50 @@
 </nav>
 </div>
 <div>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="container">
 <h1><%= investment.investor.name %></h1>
-<hr>
-<h3>Category: <%= investment.category %></h3><br/>
-<h3>Acquired price: <%= investment.acquired_value %></h3><br/>
-<h3>Acquired date: <%= investment.acquired_date%></h3><br/>
-<h3>Description: <%=investment.description%></h3><br/>
-<h3>Recent Date: <%= investment.recent_date%></h3><br/>
-<h3>Created: <%= investment.createdAt%></h3><br/>
-<h3>Modified: <%= investment.updatedAt%></h3><br/>
-<hr>
-<td><a class="btn btn-warning btn-lg" href="/investment/edit/<%= investment.id %>">Edit</a></td>
-<td><a class="btn btn-danger btn-lg" href="/investment/destroy/<%= investment.id %>">Delete</a></td>
+<div class="invfont">
+<table class="table">
+	<tr>
+		<td><strong>Category: </strong></td>
+		<td>
+		<strong><%= investment.category %></strong>
+		</td>
+	</tr>
+	<tr>
+		<td><strong>Acquired price: </strong></td>
+		<td><strong><%= investment.acquired_value %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Acquired date: </strong></td>
+		<td><strong><%= investment.acquired_date%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Description: </strong></td>
+		<td><strong><%=investment.description%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Recent Date: </strong></td>
+		<td><strong><%= investment.recent_date%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Created: </strong></td>
+		<td><strong><%= investment.createdAt%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Modified: </strong></td>
+		<td><strong><%= investment.updatedAt%></strong></td>
+	</tr>
+</table>
+</div>
+<hr/>
+<br/>
+<br/>
+<a class="btn pull-left btn-warning btn-lg" href="/investment/edit/<%= investment.id %>">Edit</a>
+<a class="btn pull-right btn-danger btn-lg" href="/investment/destroy/<%= investment.id %>">Delete</a>
+</div>
 </div>
