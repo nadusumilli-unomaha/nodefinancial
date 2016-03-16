@@ -1,5 +1,5 @@
 <div>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse  navbar-fixed-top">
   <div class="container-fluid">
     <ul class=" nav navbar-nav">
       <li class="active"><a href="/">Node Financial</a></li>
@@ -8,6 +8,9 @@
   </div>
 </nav>
 </div>
+<br/>
+<br/>
+<br/>
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -47,12 +50,12 @@
         <hr>
         <table class="show">
         <tr>
-            <th>Stocks</th>
-            <th>Investment</th>
+            <th>Total Stock Value</th>
+            <th>Total Investment Value</th>
         </tr>
         <tr>
-            <td><%=customer.stocks.total_portfolio%></td>
-            <td><%=customer.investments.total_portfolio%></td>
+            <td>$ <%=customer.stocktotal%></td>
+            <td>$ <%=customer.investmenttotal%></td>
         </tr>
         </table>
     </div>
@@ -76,8 +79,8 @@
         <tr data-id="<%= stock.id %>" data-model="stock" >
           <td><%= stock.name %></td>
           <td><%= stock.number_of_shares %></td>
-          <td><%= stock.current_price%></td>
-          <td><%= stock.current_stock_portfolio%></td>
+          <td>$ <%= stock.current_price%></td>
+          <td>$ <%= stock.current_stock_portfolio%></td>
           <td><a class="btn btn-info btn-lg" href="/stock/show/<%= stock.id %>">Show</a></td>
         </tr>
         <% }); %>
@@ -107,7 +110,7 @@
         <tr data-id="<%= investment.id %>" data-model="investment" >
           <td><%= investment.category %></td>
           <td><%=investment.acquired_date%></td>
-          <td><%= investment.acquired_value %></td>
+          <td>$ <%= investment.acquired_value %></td>
           <td><a class="btn btn-info btn-lg" href="/investment/show/<%= investment.id %>">Show</a></td>
         </tr>
         <% }); %>

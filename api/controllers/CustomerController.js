@@ -21,6 +21,14 @@ module.exports = {
     	Customer.findOne(req.param('id')).populateAll().exec(function (err, customer) {
       		if (err) return next(err);
       		if (!customer) return next();
+      		customer.stocktotal =0;
+      		customer.investmenttotal = 0;
+
+      		customer.investments.forEach(function(investment, err){
+      			if(err) console.log(err);
+      			customer.investmenttotal += investment.acquired_value;
+      			//console.log("investmenttotal: "+customer.investmenttotal+"investment: "+investment.acquired_value);
+      		});
 
       		var http = require('http');
 
@@ -38,8 +46,9 @@ module.exports = {
       			webservice_response.on('end', function(){
       				stock_data = JSON.parse(webservice_data);
       				stock.current_price = stock_data.LastPrice;
-      				stock.initial_stock_portfolio = stock.purchase_price * stock.number_of_shares;
       				stock.current_stock_portfolio = stock.current_price * stock.number_of_shares;
+      				customer.stocktotal += stock.current_price * stock.number_of_shares;
+      				console.log(customer.stocktotal);
       				//console.log(stock.symbol + '= $'+stock.current_price);
       				callback();
       			});

@@ -1,5 +1,5 @@
 <div>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <ul class=" nav navbar-nav">
       <li class="active"><a href="/">Node Financial</a></li>
@@ -7,7 +7,6 @@
       <li><a href="/customer/show/<%=stock.owner.id%>"><%=stock.owner.name%></a></li>
     </ul>
   </div>
-  <br/>
 </nav>
 </div>
 <div>
@@ -33,11 +32,23 @@
 	</tr>
 	<tr>
 		<td><strong>Purchase Price: </strong></td>
-		<td><strong><%= stock.purchase_price%></strong></td>
+		<td><strong>$ <%= stock.purchase_price%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Initital Value: </strong></td>
+		<td><strong>$ <%= stock.initial_stock_portfolio%></strong></td>
 	</tr>
 	<tr>
 		<td><strong>Latest Price: </strong></td>
-		<td><strong><%= stock.current_price%></strong></td>
+		<td><strong>$ <%= stock.current_price%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Current Value: </strong></td>
+		<td><strong>$ <%= stock.current_stock_portfolio%></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Gain or loss: </strong></td>
+		<td><strong>$ <%= (stock.current_stock_portfolio - stock.initial_stock_portfolio).toFixed(2)%></strong></td>
 	</tr>
 	<tr>
 		<td><strong>Created: </strong></td>

@@ -24,7 +24,7 @@ module.exports = {
     },
 
     purchase_price: {
-      type: 'string'
+      type: 'float'
     },
 
     date_purchased:{
@@ -34,22 +34,6 @@ module.exports = {
     name:{
       type: 'string'
     },
-
-    current_price:{
-      type: 'string'
-    },
-
-    current_stock_portfolio:{
-      type:'string'
-    },
-
-    initial_stock_portfolio:{
-      type:'string'
-    },
-
-    total_portfolio:{
-      type:'string'
-    }
   }
 };
 

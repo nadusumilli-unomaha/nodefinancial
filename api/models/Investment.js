@@ -23,7 +23,7 @@ module.exports = {
     },
 
     acquired_value:{
-      type: 'string'
+      type: 'float'
     },
 
     acquired_date:{
