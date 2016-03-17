@@ -1,0 +1,66 @@
+<div>
+<nav class="navbar navbar-inverse  navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/investment/show/<%=investment.id%>"><%=investment.category%></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<form action="/investment/update/<%= investment.id %>" method="POST" >
+  <h2>Edit a Investment for Customer</h2>
+  <table>
+  	<tr>
+	  	<input type="hidden" name="investor" value="<%= investment.investor %>" />
+	</tr>
+	<tr>
+		<td align='right'>
+			<strong>Category</strong>
+		</td>
+		<td align='left'>
+			<input value="<%= investment.category %>" type="text" name="category" ><br />	
+		</td>
+	</tr>
+	<tr>
+		<td align='right'>
+			<strong>Description</strong>
+		</td>
+		<td align='left'>
+			<input value="<%= investment.description %>" type="text" name="description" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Acquired Price</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.acquired_value %>"type="text" name="acquired_value" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Acquired Date</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.acquired_date %>"type="text" name="acquired_date" ><br />
+		</td>
+	</tr>
+	<tr>
+		<td align='right'>
+			<strong>Recent Date</strong>
+		</td>
+		<td align='left'>
+			<input value="<%= investment.recent_date %>" type="text" name="recent_date" ><br />	
+		</td>
+	</tr>
+  </table>
+  <br/>
+  <input class="btn btn-primary btn-lg" type="submit" value="Update" />
+</form>
+</div>

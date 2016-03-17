@@ -1,0 +1,38 @@
+<div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container">
+<h1>Customers</h1>
+<br/>
+<br/>
+<table class="show">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Cell Phone</th>
+    <th></th>
+  </tr>
+  <% _.each(customers, function(customer) { %>
+  <tr data-id="<%= customer.id %>" data-model="customer" >
+    <td><%= customer.id %></td>
+    <td><%= customer.name %></td>
+    <td><%= customer.email %></td>
+    <td><%= customer.cell_phone%></td>
+    <td><a class="btn btn-info btn-lg" href="/customer/show/<%= customer.id %>">Show</a></td>
+  </tr>
+  <% }) %>
+</table>
+<br/>
+<br/>
+  <a class="btn btn-primary btn-lg" href="/customer/new">Create New</a>
+  </div>

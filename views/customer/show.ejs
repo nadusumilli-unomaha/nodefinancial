@@ -1,0 +1,125 @@
+<div>
+<nav class="navbar navbar-inverse  navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+    <h1><%= customer.name %></h1>
+    <div class="invfont">
+    <table class="table">
+      <tr>
+            <td><strong>Email: </strong></td>
+            <td><strong><%= customer.email %></strong></td>
+      </tr>
+      <tr>
+            <td><strong>Address: </strong></td>
+            <td><strong>
+            <%= customer.street_address %>
+            ,<%= customer.city%>
+            ,<%= customer.state %>
+            ,<%= customer.zip %>
+            </strong></td>
+      </tr>
+      <tr>
+            <td><strong>Home Phone: </strong></td>
+            <td><strong><%= customer.home_phone %></strong></td>
+      </tr>
+      <tr>
+          <td><strong>Cell Phone: </strong></td>
+          <td><strong><%= customer.cell_phone %></strong></td>
+      </tr>
+    </table>
+    </div>
+    <hr>
+    <br/>
+        <a class="btn btn-warning btn-lg" href="/customer/edit/<%= customer.id %>">Edit</a>
+        <a class="btn btn-danger btn-lg" href="/customer/destroy/<%= customer.id %>">Delete</a>
+    </div>
+    <div class="col-md-6">
+        <h1>Portfolio: </h1>
+        <hr>
+        <table class="show">
+        <tr>
+            <th>Total Stock Value</th>
+            <th>Total Investment Value</th>
+        </tr>
+        <tr>
+            <td>$ <%=customer.stocktotal%></td>
+            <td>$ <%=customer.investmenttotal%></td>
+        </tr>
+        </table>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <!--This is the Stock information-->
+      <h3>Stocks</h3>
+      <table class="show">
+        <tr>
+          <th >Name</th>
+          <th >Number of Shares</th>
+          <th >Latest Price</th>
+          <th>Total Value</th>
+          <th ></th>
+        </tr>
+        <% _.each(customer.stocks, function(stock) { %>
+        <tr data-id="<%= stock.id %>" data-model="stock" >
+          <td><%= stock.name %></td>
+          <td><%= stock.number_of_shares %></td>
+          <td>$ <%= stock.current_price%></td>
+          <td>$ <%= stock.current_stock_portfolio%></td>
+          <td><a class="btn btn-info btn-lg" href="/stock/show/<%= stock.id %>">Show</a></td>
+        </tr>
+        <% }); %>
+      </table>
+      <br/>
+      <form action="/stock/new" method="POST" >
+        <input type="hidden" value="<%= customer.id %>" name="owner">
+        <input type="submit" class="btn btn-primary btn-lg" value="New Stock" />
+      </form>
+    </div>
+  </div>
+</div>
+<!--This is the investment information-->
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Investment</h3>
+      <table class="show">
+        <tr>
+          <th>Category</th>
+          <th>Acquired Date</th>
+          <th>Value</th>
+          <th></th>
+        </tr>
+        <% _.each(customer.investments, function(investment) { %>
+        <tr data-id="<%= investment.id %>" data-model="investment" >
+          <td><%= investment.category %></td>
+          <td><%=investment.acquired_date%></td>
+          <td>$ <%= investment.acquired_value %></td>
+          <td><a class="btn btn-info btn-lg" href="/investment/show/<%= investment.id %>">Show</a></td>
+        </tr>
+        <% }); %>
+      </table>
+      <br/>
+      <form action="/investment/new" method="POST" >
+        <input type="hidden" value="<%= customer.id %>" name="investor">
+        <input type="submit" class="btn btn-primary btn-lg" value="New Investment" />
+      </form>
+    </div>
+  </div>
+</div>

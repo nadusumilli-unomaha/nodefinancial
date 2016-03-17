@@ -1,0 +1,54 @@
+<nav>
+  <a href="/">Home</a>
+  <a href="/customer">Customer</a>
+</nav>
+<form action="/stock/update/<%= stock.id %>" method="POST" >
+  <h2>Edit a Stock for Customer</h2>
+  <table>
+  	<tr>
+	  	<input type="hidden" name="owner" value="<%= stock.owner %>" />
+	</tr>
+	<tr>
+		<td align='right'>
+			Stock Symbol
+		</td>
+		<td align='left'>
+			<input value="<%= stock.symbol %>" type="text" name="symbol" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		number of shares
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.number_of_shares %>"type="text" name="number_of_shares" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Name
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.name %>"type="text" name="name" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Purchase Price
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.purchase_price %>"type="text" name="purchase_price" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		Date Purchased
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.date_purchased %>"type="text" name="date_purchased" ><br />
+		</td>
+	</tr>
+  </table>
+  <br/>
+  <input type="submit" value="Edit Stock" />
+</form>

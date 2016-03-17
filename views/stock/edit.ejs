@@ -1,0 +1,66 @@
+<div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/stock/show/<%=stock.id%>"><%=stock.name%></a></li>    
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<form action="/stock/update/<%= stock.id %>" method="POST" >
+  <h2>Edit a Stock for Customer</h2>
+  <table>
+  	<tr>
+	  	<input type="hidden" name="owner" value="<%= stock.owner %>" />
+	</tr>
+	<tr>
+		<td align='right'>
+			<strong>Stock Symbol</strong>
+		</td>
+		<td align='left'>
+			<input value="<%= stock.symbol %>" type="text" name="symbol" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>number of shares</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.number_of_shares %>"type="text" name="number_of_shares" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Name</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.name %>"type="text" name="name" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Purchase Price</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.purchase_price %>"type="text" name="purchase_price" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Date Purchased</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= stock.date_purchased %>"type="text" name="date_purchased" ><br />
+		</td>
+	</tr>
+  </table>
+  <br/>
+  <input class="btn btn-primary btn-lg" type="submit" value="Update" />
+</form>
+</div>

@@ -1,0 +1,28 @@
+<div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/customer/show/<%=customer.id%>"><%=customer.name%></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<form action="/stock/create" method="POST" >
+  <h2>Create a new Stock for <%= customer.name %></h2>
+
+  <input type="hidden" name="owner" value="<%= customer.id %>" />
+
+  <input type="text" placeholder="Symbol" name="symbol" ><br />
+  <input type="text" placeholder="Name" name="name" ><br />
+  <input type="text" placeholder="Number of Shares" name="number_of_shares" ><br />
+  <input type="text" placeholder="Purchase Price" name="purchase_price" ><br />
+  <input type="text" placeholder="Date purchased" name="date_purchased" ><br />
+  <input class="btn btn-primary btn-lg" type="submit" value="Add Stock" />
+</form>
+</div>

@@ -1,0 +1,28 @@
+<div>
+<nav class="navbar navbar-inverse  navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/customer/show/<%=customer.id%>"><%=customer.name%></a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<form action="/investment/create" method="POST" >
+  <h2>Create a new Investment for <%= customer.name %></h2>
+
+  <input type="hidden" name="investor" value="<%= customer.id %>" />
+
+  <input type="text" placeholder="Category" name="category" ><br />
+  <textarea type="text" placeholder="Description" name="description"></textarea><br />
+  <input type="text" placeholder="Acquired Value" name="acquired_value"><br />
+  <input type="text" placeholder="Acquired date" name="acquired_date"><br />
+  <input type="text" placeholder="Recent date" name="recent_date"><br />
+  <input class="btn btn-primary btn-lg" type="submit" value="Add Investment" />
+</form>
+</div>

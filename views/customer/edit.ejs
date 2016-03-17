@@ -1,0 +1,63 @@
+<div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <ul class=" nav navbar-nav">
+      <li class="active"><a href="/">Node Financial</a></li>
+      <li><a href="/customer">Customer Home</a></li>
+      <li><a href="/customer/show/<%=customer.id%>">Nikhit Adusumilli</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+<br/>
+<br/>
+<br/>
+<div>
+<form class="form-signin" action="/customer/update/<%= customer.id %>" method="POST" >
+  <h2>Create a Customer</h2>
+  <table>
+  	<tr>
+	  	<td align='right'>
+	  		<strong>Customer Name</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.name %>"type="text" name="name" ><br />
+		</td>
+	</tr>
+	<tr>
+		<td align='right'>
+			<strong>Customer Street Adress</strong>
+		</td>
+		<td align='left'>
+			<input value="<%= customer.street_address %>" type="text" name="street_address" ><br />	
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Customer City</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.city %>"type="text" name="city" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Customer State</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.state %>"type="text" name="state" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Customer Email</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= customer.email %>"type="text" name="email" ><br />
+		</td>
+	</tr>
+  </table>
+  <br/>		
+  <input class="btn btn-primary btn-lg" type="submit" value="Update" />
+</form>
+</div>
