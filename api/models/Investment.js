@@ -30,6 +30,10 @@ module.exports = {
       type: 'string'
     },
 
+    recent_value:{
+      type: 'float'
+    },
+
     recent_date:{
       type: 'string'
     }
