@@ -3,7 +3,7 @@
 a [Sails](http://sailsjs.org) application
 =========================================
 
-(Link to sails)[http://sails-adusumilli.rhcloud.com/]
+[Link to my sails application](http://sails-adusumilli.rhcloud.com/)
 
 1) Frameworks provide skeletel structure for a system with a mode of approach. Programming or developing a system from scratch would require lot of effort  as the developer needs to describe the whole system along with coding the complete system. Description of the whole system is required if someone has to use the code or enhance the system, and this would be more of organizing the stuff. Understanding a new framework would consume time for other people who are going to work on the system. So using an existing framework which suites your business or project would reduce the extra work or creating one. This way any programer who develops it or enhances it can reduce the time spent on designing or understanding a new one.
 
