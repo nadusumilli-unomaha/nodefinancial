@@ -35,28 +35,11 @@
 			<input value="<%= investment.description %>" type="text" name="description" ><br />	
 		</td>
 	</tr>
-	<tr>
-	  <td align='right'>
-	  		<strong>Acquired Price</strong>
-	  	</td>
-	  	<td align='left'>
-		  <input value="<%= investment.acquired_value %>"type="text" name="acquired_value" ><br />
-		</td>
-	</tr>
-	<tr>
 	  <td align='right'>
 	  		<strong>Acquired Date</strong>
 	  	</td>
 	  	<td align='left'>
 		  <input value="<%= investment.acquired_date %>"type="text" name="acquired_date" ><br />
-		</td>
-	</tr>
-	<tr>
-	  <td align='right'>
-	  		<strong>Recent Price</strong>
-	  	</td>
-	  	<td align='left'>
-		  <input value="<%= investment.recent_value %>"type="text" name="acquired_value" ><br />
 		</td>
 	</tr>
 	<tr>
@@ -67,6 +50,23 @@
 			<input value="<%= investment.recent_date %>" type="text" name="recent_date" ><br />	
 		</td>
 	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Recent Price</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.recent_value %>"type="text" name="recent_value" ><br />
+		</td>
+	</tr>
+	<tr>
+	  <td align='right'>
+	  		<strong>Acquired Price</strong>
+	  	</td>
+	  	<td align='left'>
+		  <input value="<%= investment.acquired_value %>"type="text" name="acquired_value" ><br />
+		</td>
+	</tr>
+	<tr>
   </table>
   <br/>
   <input class="btn btn-primary btn-lg" type="submit" value="Update" />

@@ -25,20 +25,24 @@
 		</td>
 	</tr>
 	<tr>
-		<td><strong>Acquired price: </strong></td>
-		<td><strong>$ <%= investment.acquired_value %></strong></td>
-	</tr>
-	<tr>
-		<td><strong>Acquired date: </strong></td>
-		<td><strong><%= investment.acquired_date%></strong></td>
-	</tr>
-	<tr>
 		<td><strong>Description: </strong></td>
 		<td><strong><%=investment.description%></strong></td>
 	</tr>
 	<tr>
-		<td><strong>Recent price: </strong></td>
-		<td><strong>$ <%= investment.Recent_value %></strong></td>
+		<td><strong>Acquired Value: </strong></td>
+		<td><strong>$ <%= investment.acquired_value %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Recent Value: </strong></td>
+		<td><strong>$ <%= investment.recent_value %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Gain or Loss: </strong></td>
+		<td><strong>$ <%= investment.recent_value-investment.acquired_value %></strong></td>
+	</tr>
+	<tr>
+		<td><strong>Acquired date: </strong></td>
+		<td><strong><%= investment.acquired_date%></strong></td>
 	</tr>
 	<tr>
 		<td><strong>Recent Date: </strong></td>
